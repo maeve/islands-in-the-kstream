@@ -1,0 +1,6 @@
+FROM provectuslabs/kafka-ui:0.3.3
+
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.9.0/wait /wait
+RUN chmod +x /wait
+
+CMD ["/bin/sh", "-c", "/wait && java $JAVA_OPTS -jar kafka-ui-api.jar"]
